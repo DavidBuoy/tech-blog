@@ -1,0 +1,29 @@
+<!-- Loop over each object in the projects array -->
+{{#each projects as |project| }}
+
+<div class="card">
+  <div class="card-header">
+    <h2>
+      <a class="home-header" href="/project/{{project.id}}">{{project.name}}</a>
+    </h2>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p class="card-text">{{project.description}}</p>
+      <div class="col text-center">
+        <button type="button" class="btn btn-secondary more-button"><a href="/project/{{project.id}}"> Click Here for
+            More
+          </a></button>
+      </div>
+      <footer class="blockquote-footer">Posted on {{format_date project.date_created}}
+        <div>
+          <cite title="Source Title">Writen
+            by {{project.user.name}}
+          </cite>
+        </div>
+      </footer>
+    </blockquote>
+  </div>
+</div>
+
+{{/each}}
